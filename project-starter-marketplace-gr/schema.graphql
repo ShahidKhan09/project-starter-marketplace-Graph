@@ -1,0 +1,88 @@
+type OwnershipTransferred @entity {
+  id: ID!
+  previousOwner: Bytes! # address
+  newOwner: Bytes! # address
+}
+
+type Offerandmint @entity {
+  id: ID!
+  _owner : Bytes!   # address
+  _bidder : Bytes!  # address
+  _amount : BigInt!
+  uri : String
+  mintIndex : BigInt!
+  v : Int!
+  r : Bytes!        # address
+  s : Bytes!        # address
+  contractAddress : Bytes!  # address
+}
+
+type Acceptbidandmint @entity {
+   id : ID!
+  _seller : Bytes!
+  _bidder : Bytes!
+  _amount : BigInt!
+  uri : String
+  mintIndex : BigInt!
+  deadline : BigInt!
+  v : Int!
+  r : Bytes!        # address
+  s : Bytes!        # address
+  contractAddress : Bytes!  # address
+}
+
+type Buyandmint @entity {
+  id : ID!
+  _seller : Bytes!
+  _buyer : Bytes!
+  _amount : BigInt!
+  uri : String
+  mintIndex : BigInt!
+  v : Int!
+  r : Bytes!        # address
+  s : Bytes!        # address
+  contractAddress : Bytes!  # address
+}
+
+type Offerandtransfer @entity {
+  id: ID!
+  _owner : Bytes!   # address
+  _bidder : Bytes!  # address
+  _amount : BigInt!
+  tokenId : BigInt!
+  v : Int!
+  r : Bytes!        # address
+  s : Bytes!        # address
+  contractAddress : Bytes!  # address
+  }
+
+type Acceptbidandtransfer @entity {
+  id : ID!
+  _seller : Bytes!
+  _bidder : Bytes!
+  _amount : BigInt!
+  tokenId : BigInt!
+  deadline : BigInt!
+  v : Int!
+  r : Bytes!        # address
+  s : Bytes!        # address
+  contractAddress : Bytes!  # address
+  }
+
+type Buyandtransfer @entity  {
+  id: ID!
+  _seller : Bytes!   # address
+  _buyer : Bytes!  # address
+  _amount : BigInt!
+  tokenId : BigInt!
+  v : Int!
+  r : Bytes!        # address
+  s : Bytes!        # address
+  contractAddress : Bytes!  # address
+}
+
+type Withdrawstoredinaccount @entity {
+  id: ID!
+  recipient : Bytes!   # address
+  amount : BigInt!
+}
